@@ -1,85 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modal Example</title>
+    <title>IT TAT Education Center</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <div class="background">
-        <div class="max-width">
-
-            <!-- Modal -->
-            <div id="myModal" class="modal">
-                <div class="modal-content">
-                    <h2>Xush kelibsiz</h2>
-                    <p>Davom etish uchun shularni to`ldiring</p>
-                    <form id="modalForm">
-                        <input type="text" placeholder="Name" required>
-                        <input type="email" placeholder="Your email" required>
-                        <input type="number" placeholder="Your number" required>
-                        <textarea name="" id="" placeholder="Your masser"></textarea><br>
-                        <button type="submit" class="btn-1">Bosish</button>
-                    </form>
-                </div>
-            </div>
+    <!-- Welcome Modal -->
+    <div id="welcomeModal" class="modal">
+        <div class="modal-content">
+            <h2>Xush kelibsiz</h2>
+            <p>Davom etish uchun shularni to'ldiring</p>
+            <form id="welcomeForm">
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Your email" required>
+                <input type="number" placeholder="Your number" required>
+                <textarea placeholder="Your message"></textarea><br>
+                <button type="submit" class="btn-1">Bosish</button>
+            </form>
         </div>
     </div>
 
-    <!-- Main Content (hidden initially) -->
+    <!-- Main Content -->
     <div id="mainContent" class="hidden">
         <div class="background">
+            <header class="display">
+                <img src="assets/2025-07-05_05-58-38 (1).png" alt="IT TAT Logo">
+                <ul class="display li">
+                    <li class="text">Bosh Sahifa</li>
+                    <li class="text">Kurslar</li>
+                    <li class="text">Ustozlar</li>
+                    <li class="text">Online kurslar</li>
+                </ul>
+                <!-- <button class="btn btn-white">white</button>
+                <button class="btn btn-black">black</button> -->
+                <div>
+                    <label>+998 88 (611)-04-40</label>
+                    <button class="btn-2">Ro'yxatdan o'tish</button>
+                </div>
+            </header>
             <div class="max-width">
-                <header class="display">
-                    <img src="assets/2025-07-05_05-58-38 (1).png" alt="">
-                    <ul class="display">
-                        <li>Bosh Sahifa</li>
-                        <li>Kurslar</li>
-                        <li>Ustozlar</li>
-                        <li>Olnile kurslar</li>
-                    </ul>
-                    <div>
-                        <label for="">+998 88 (611)-04-40</label>
-                        <buttin class="btn-2">Ro'yxatdan o`tish</buttin>
+
+                <!-- Registration Modal -->
+                <div id="regModal" class="modal">
+                    <div class="modal-content">
+                        <button class="close-btn">×</button>
+                        <form id="regForm">
+                            <input type="text" placeholder="Name" required>
+                            <input type="email" placeholder="Your email" required>
+                            <input type="number" placeholder="Your number" required>
+                            <textarea placeholder="Your message"></textarea><br>
+                            <button type="submit" class="btn-1">Bosish</button>
+                        </form>
                     </div>
-                </header>
+                </div>
+
+                <!-- Consultation Modal -->
+                <div id="consultModal" class="modal">
+                    <div class="modal-content">
+                        <button class="close-btn">×</button>
+                        <h2>Bepul konsultatsiya</h2>
+                        <form id="consultForm">
+                            <input type="text" placeholder="Name" required>
+                            <input type="email" placeholder="Your email" required>
+                            <input type="number" placeholder="Your number" required>
+                            <textarea placeholder="Your question"></textarea><br>
+                            <button type="submit" class="btn-1">Yuborish</button>
+                        </form>
+                    </div>
+                </div>
+
                 <div class="div-max-2">
                     <h1 class="font-size-40 h1-div-max-2">Innovatsiya va texnologiya olami buyuklardan biri <br>
-                        bo`lishga
-                        IT TAT sizga ko'makdosh</h1>
+                        bo'lishga IT TAT sizga ko'makdosh</h1>
                     <div class="div-max-text display">
                         <div class="div-img">
-                            <img src="assets/2025-07-05_06-21-45 (1).png" alt="">
+                            <img src="assets/2025-07-05_06-21-45 (1).png" alt="Main Image">
                         </div>
-                        <div class="div-center">
-                            <button class="btn-max">Ibrohim</button> <br>
-                            <button class="btn-max">Sayyor</button> <br>
-                            <button class="btn-max">Lazizjon</button> <br>
-                            <button class="btn-max">Muhammad</button> <br>
-                            <button class="btn-max">Foziljon</button> <br>
-                            <button class="btn-max">Sayyorbek</button> <br>
+                        <div class="teacher-content">
+                            <div class="teacher-info" id="ibrohim-info">
+                                <button class="btn-modal-x">×</button>
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit delectus natus maxime asperiores eos odio!</p>
+                            </div>
+                            <button class="btn-max" data-teacher="ibrohim">Ibrohim</button><br>
+                            <br>
+                            <div class="teacher-info" id="sayyor-info">
+                                <button class="btn-modal-x">×</button>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio reiciendis cupiditate saepe veniam est at!</p>
+                            </div>
+                            <button class="btn-max" data-teacher="sayyor">Sayyor</button><br>
+                            <br>
+                            <div class="teacher-info" id="lazizjon-info">
+                                <button class="btn-modal-x">×</button>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi unde fugiat nostrum maxime corrupti itaque!</p>
+                            </div>
+                            <button class="btn-max" data-teacher="lazizjon">Lazizjon</button><br>
+                            <br>
+                            <div class="teacher-info" id="muhammad-info">
+                                <button class="btn-modal-x">×</button>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa inventore exercitationem atque vero provident obcaecati!</p>
+                            </div>
+                            <button class="btn-max" data-teacher="muhammad">Muhammad</button><br>
+                            <br>
+                            <div class="teacher-info" id="foziljon-info">
+                                <button class="btn-modal-x">×</button>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos tenetur saepe delectus laudantium, vel ullam!</p>
+                            </div>
+                            <button class="btn-max" data-teacher="foziljon">Foziljon</button><br>
                         </div>
                         <div class="div-right">
-                            <h1>IT TAT - O'z qadriyatlariga ega va eng kuchli <br> mutaxassislar <br>jamlangan zamonaviy
-                                kasblar o'quv markazi.</h1>
-                            <button class="btn-max">Bepul konsultatsiya olish</button>
+                            <h1>IT TAT - O'z qadriyatlariga ega va eng kuchli <br> mutaxassislar <br>jamlangan
+                                zamonaviy kasblar o'quv markazi.</h1>
+                            <button class="btn-max" id="consultBtn">Bepul konsultatsiya olish</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-
-    <!-- <div id="mainContent" class="hidden">
-    Asosiy kontent shu yerda bo'ladi
-    <h1>Asosiy kontent</h1>
-</div> -->
 
     <script src="script.js"></script>
 </body>
-
 </html>
