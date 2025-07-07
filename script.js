@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     // 1. WELCOME MODAL (Birinchi ochiladigan modal)
-    const welcomeModal = document.getElementById('welcomeModal');
-    const welcomeForm = document.getElementById('welcomeForm');
-    const mainContent = document.getElementById('mainContent');
+    let welcomeModal = document.getElementById('welcomeModal');
+    let welcomeForm = document.getElementById('welcomeForm');
+    let mainContent = document.getElementById('mainContent');
 
     if (welcomeModal && welcomeForm && mainContent) {
         welcomeModal.style.display = 'block';
@@ -17,9 +17,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // 2. REGISTRATION MODAL (Ro'yxatdan o'tish)
-    const regModal = document.getElementById('regModal');
-    const regForm = document.getElementById('regForm');
-    const regBtn = document.querySelector('.btn-2'); // "Ro'yxatdan o'tish" tugmasi
+    let regModal = document.getElementById('regModal');
+    let regForm = document.getElementById('regForm');
+    let regBtn = document.querySelector('.btn-2'); // "Ro'yxatdan o'tish" tugmasi
 
     if (regBtn && regModal) {
         regBtn.addEventListener('click', function() {
@@ -36,9 +36,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // 3. CONSULTATION MODAL (Konsultatsiya olish)
-    const consultModal = document.getElementById('consultModal');
-    const consultForm = document.getElementById('consultForm');
-    const consultBtn = document.getElementById('consultBtn'); // "Bepul konsultatsiya" tugmasi
+    let consultModal = document.getElementById('consultModal');
+    let consultForm = document.getElementById('consultForm');
+    let consultBtn = document.getElementById('consultBtn'); // "Bepul konsultatsiya" tugmasi
 
     if (consultBtn && consultModal) {
         consultBtn.addEventListener('click', function() {
@@ -62,12 +62,12 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // 5. TEACHER INFO (Ustozlar haqida ma'lumot)
-    const teacherBtns = document.querySelectorAll('.btn-max[data-teacher]');
-    const teacherInfos = document.querySelectorAll('.teacher-info');
+    let teacherBtns = document.querySelectorAll('.btn-max[data-teacher]');
+    let teacherInfos = document.querySelectorAll('.teacher-info');
 
     teacherBtns.forEach(btn => {
         btn.addEventListener('click', function() {
-            const teacherId = this.getAttribute('data-teacher') + '-info';
+            let teacherId = this.getAttribute('data-teacher') + '-info';
             document.getElementById(teacherId).style.display = 'block';
         });
     });
