@@ -22,6 +22,9 @@ body {
     max-width: 1300px;
     margin: auto;
 }
+button,input,i,li{
+    cursor: pointer;
+}
 
 /* Utility Classes */
 .display {
@@ -47,6 +50,7 @@ body {
     z-index: 1000;
     width: 90%;
     max-width: 500px;
+    display: none;
 }
 
 .modal-content {
@@ -88,7 +92,7 @@ textarea {
 
 .btn-1, .btn-2, .btn-max {
     padding: 10px 20px;
-    background-color: var(--blue);
+    background-color: rgb(1, 1, 233);
     color: white;
     border: none;
     border-radius: 5px;
@@ -113,7 +117,11 @@ header {
     padding-left: 170px;
     padding-right: 170px;
 }
-
+ul li:hover{
+    text-decoration: underline;
+    color: #1d4ed8;
+    transition: all 0.04s ease;
+}
 header ul {
     list-style: none;
     display: flex;
