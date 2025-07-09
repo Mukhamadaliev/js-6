@@ -9,21 +9,13 @@
     --blue: #2563eb;
     --black: #000;
     --white: white;
-    --gray-light: #f0f0f0;
+    --minus-whihe: rgba(255, 255, 255, 0.7);
 }
 
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: var(--white);
-    color: var(--black);
-}
-.max-width{
-    max-width: 1300px;
-    margin: auto;
-}
-button,input,i,li{
-    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 /* Utility Classes */
@@ -32,6 +24,11 @@ button,input,i,li{
     align-items: center;
     justify-content: space-between;
 }
+.max-width{
+    max-width: 1200px;
+    margin: auto;
+}
+
 
 .hidden {
     display: none;
@@ -68,15 +65,12 @@ button,input,i,li{
     border: none;
     font-size: 24px;
     cursor: pointer;
-    color: #666;
-}
-
-.close-btn:hover {
-    color: var(--black);
 }
 
 /* Form Elements */
-input, textarea {
+input,
+textarea,
+select {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -90,9 +84,22 @@ textarea {
     resize: vertical;
 }
 
-.btn-1, .btn-2, .btn-max {
+select {
+    background-color: white;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 1em;
+}
+
+.btn-1,
+.btn-2,
+.btn-max {
     padding: 10px 20px;
-    background-color: rgb(1, 1, 233);
+    background-color: var(--blue);
     color: white;
     border: none;
     border-radius: 5px;
@@ -100,7 +107,9 @@ textarea {
     transition: background-color 0.3s;
 }
 
-.btn-1:hover, .btn-2:hover, .btn-max:hover {
+.btn-1:hover,
+.btn-2:hover,
+.btn-max:hover {
     background-color: #1d4ed8;
 }
 
@@ -108,7 +117,7 @@ textarea {
 header {
     padding: 15px 0;
     background-color: white;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -117,11 +126,7 @@ header {
     padding-left: 170px;
     padding-right: 170px;
 }
-ul li:hover{
-    text-decoration: underline;
-    color: #1d4ed8;
-    transition: all 0.04s ease;
-}
+
 header ul {
     list-style: none;
     display: flex;
@@ -131,12 +136,26 @@ header ul {
 header img {
     height: 50px;
 }
+.btn-white{
+    padding: 5px 10px;
+    background-color: white;
+    outline: none;
+}
+.btn-black{
+    padding: 5px 10px;
+    background-color: black;
+    outline: none;
+    color: white;
+}
 
+input,textarea{
+    outline: none;
+}
 /* Teacher Info Styles */
 .teacher-info {
     display: none;
     padding: 25px;
-    background-color: var(--gray-light);
+    background-color: #f0f0f0;
     border-radius: 5px;
     margin: 10px 0;
     max-width: 250px;
@@ -145,17 +164,13 @@ header img {
 
 .btn-modal-x {
     position: absolute;
-    top: 5px;
-    right: 5px;
+    top: 2px;
+    right: 2px;
+    padding: 5px 10px;
     background: none;
     border: none;
-    font-size: 18px;
+    font-size: 16px;
     cursor: pointer;
-    color: #666;
-}
-
-.btn-modal-x:hover {
-    color: var(--black);
 }
 
 /* Content Styles */
@@ -172,13 +187,49 @@ header img {
     margin: 20px 0;
 }
 
+/* Result messages */
+#welcomeResult,
+#regResult,
+#consultResult {
+    margin-top: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Theme styles */
+body.dark-theme {
+    background-color: black;
+    color: white;
+}
+
+body.dark-theme .text {
+    color: white;
+}
+
+body.dark-theme header {
+    background-color: #222;
+}
+
 .teacher-content{
-    background-color: #1d4ed8;
-    padding: 20px;
-    margin-bottom: 15px;
-    width: 200px;
-    margin-right: 15px;
-    border-radius: 15px;
+    padding: 15px;
+    background-color: blue;
+    margin-right: 20px;
+    border-radius: 10px;
+    /* width: 150px; */
+}
+
+body.dark-theme .modal,
+body.dark-theme .teacher-info {
+    background-color: #333;
+    color: white;
+}
+
+body.dark-theme input,
+body.dark-theme textarea,
+body.dark-theme select {
+    background-color: #444;
+    color: white;
+    border-color: #666;
 }
 
 /* Responsive Adjustments */
@@ -187,128 +238,21 @@ header img {
         flex-direction: column;
         gap: 15px;
     }
-    
+
     header ul {
         flex-wrap: wrap;
         justify-content: center;
     }
-    
+
     .modal {
         width: 95%;
     }
-}
 
-/* Responsive Adjustments */
-@media (max-width: 1200px) {
     .div-max-text {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    .div-right {
-        margin-top: 30px;
-        width: 100%;
-    }
-}
-
-@media (max-width: 992px) {
-    header .display {
         flex-direction: column;
-        gap: 15px;
     }
-    
-    header ul {
-        margin: 15px 0;
-    }
-    
-    .teacher-content {
-        margin-top: 20px;
-    }
-}
 
-@media (max-width: 768px) {
-    .display {
-        flex-direction: column;
-        gap: 15px;
-    }
-    
-    header ul {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    .modal {
-        width: 95%;
-        padding: 20px;
-    }
-    
-    .h1-div-max-2 {
-        font-size: 28px;
-    }
-    
-    .div-right h1 {
-        font-size: 24px;
-    }
-    
     .teacher-info {
         max-width: 100%;
-    }
-}
-
-@media (max-width: 576px) {
-    .modal {
-        padding: 15px;
-    }
-    
-    .h1-div-max-2 {
-        font-size: 24px;
-        margin: 15px 0;
-    }
-    
-    .div-right h1 {
-        font-size: 20px;
-    }
-    
-    header ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-    
-    .btn-1, .btn-2, .btn-max {
-        padding: 8px 16px;
-        font-size: 14px;
-    }
-    
-    input, textarea {
-        padding: 8px;
-        font-size: 14px;
-    }
-    
-    .teacher-content button {
-        width: 100%;
-    }
-}
-
-@media (max-width: 400px) {
-    .modal {
-        width: 98%;
-        padding: 10px;
-    }
-    
-    .h1-div-max-2 {
-        font-size: 20px;
-    }
-    
-    .div-right h1 {
-        font-size: 18px;
-    }
-    
-    .close-btn {
-        font-size: 20px;
-    }
-    
-    .btn-modal-x {
-        font-size: 16px;
     }
 }

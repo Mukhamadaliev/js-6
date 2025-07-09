@@ -1,126 +1,136 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uz">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT TAT Education Center</title>
+    <title>IT TAT O'quv Markazi</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Welcome Modal -->
     <div id="welcomeModal" class="modal">
         <div class="modal-content">
+            <!-- <button class="close-btn" onclick="closeModal('welcomeModal')">×</button> -->
             <h2>Xush kelibsiz</h2>
             <p>Davom etish uchun shularni to'ldiring</p>
             <form id="welcomeForm">
-                <input type="text" placeholder="Name" required>
-                <input type="email" placeholder="Your email" required>
-                <input type="number" placeholder="Your number" required>
-                <textarea placeholder="Your message"></textarea><br>
-                <button type="submit" class="btn-1">Bosish</button>
+                <input type="text" id="nameField" placeholder="Ismingiz" required>
+                <input type="email" id="emailField" placeholder="Email manzilingiz" required>
+                <input type="number" id="numberField" placeholder="Telefon raqamingiz" required>
+                <textarea id="messageField" placeholder="Xabaringiz" required></textarea><br>
+                <button type="submit" class="btn-1">Jo'natish</button>
             </form>
+            <p id="welcomeResult"></p>
         </div>
     </div>
-
-    <!-- Main Content -->
+    
+    <!-- Main Content (hidden initially) -->
     <div id="mainContent" class="hidden">
         <div class="background">
-            <header class="display">
-                <img src="assets/2025-07-05_05-58-38 (1).png" alt="IT TAT Logo">
-                <ul class="display li">
-                    <li class="text">Bosh Sahifa</li>
-                    <li class="text">Kurslar</li>
-                    <li class="text">Ustozlar</li>
-                    <li class="text">Online kurslar</li>
-                </ul>
-                <!-- <button class="btn btn-white">white</button>
-                <button class="btn btn-black">black</button> -->
-                <div>
-                    <label>+998 88 (611)-04-40</label>
-                    <button class="btn-2">Ro'yxatdan o'tish</button>
-                </div>
-            </header>
-            <div class="max-width">
-
-                <!-- Registration Modal -->
-                <div id="regModal" class="modal">
-                    <div class="modal-content">
-                        <button class="close-btn">×</button>
-                        <h2>Ro`yxadan o`tish</h2>
-                        <form id="regForm">
-                            <input type="text" placeholder="Name" required>
-                            <input type="email" placeholder="Your email" required>
-                            <input type="number" placeholder="Your number" required>
-                            <textarea placeholder="Your message"></textarea><br>
-                            <button type="submit" class="btn-1">Bosish</button>
-                        </form>
+            <!-- <div class="max-width-1600"> -->
+                <header class="display">
+                    <img src="assets/2025-07-05_05-58-38 (1).png" alt="IT TAT Logo">
+                    <ul class="display li">
+                        <li class="text">Bosh Sahifa</li>
+                        <li class="text">Kurslar</li>
+                        <li class="text">Ustozlar</li>
+                        <li class="text">Online kurslar</li>
+                    </ul>
+                    <div>
+                    <button class="btn btn-white">white</button>
+                    <button class="btn btn-black">black</button>
+                        <label>+998 88 611-04-40</label>
+                        <button class="btn-2">Ro'yxatdan o'tish</button>
                     </div>
-                </div>
-
-                <!-- Consultation Modal -->
-                <div id="consultModal" class="modal">
-                    <div class="modal-content">
-                        <button class="close-btn">×</button>
-                        <h2>Ro`yxadan o`tish</h2>
-                        <form id="consultForm">
-                            <input type="text" placeholder="Name" required>
-                            <input type="email" placeholder="Your email" required>
-                            <input type="number" placeholder="Your number" required>
-                            <textarea placeholder="Your question"></textarea><br>
-                            <button type="submit" class="btn-1">Yuborish</button>
-                        </form>
-                    </div>
-                </div>
-
-                <div class="div-max-2">
-                    <h1 class="font-size-40 h1-div-max-2">Innovatsiya va texnologiya olami buyuklardan biri <br>
-                        bo'lishga IT TAT sizga ko'makdosh</h1>
-                    <div class="div-max-text display">
-                        <div class="div-img">
-                            <img src="assets/2025-07-05_06-21-45 (1).png" alt="Main Image">
-                        </div>
-                        <div class="teacher-content">
-                            <div class="teacher-info" id="ibrohim-info">
-                                <button class="btn-modal-x">×</button>
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit delectus natus maxime asperiores eos odio!</p>
-                            </div>
-                            <button class="btn-max" data-teacher="ibrohim">Ibrohim</button><br>
-                            <br>
-                            <div class="teacher-info" id="sayyor-info">
-                                <button class="btn-modal-x">×</button>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio reiciendis cupiditate saepe veniam est at!</p>
-                            </div>
-                            <button class="btn-max" data-teacher="sayyor">Sayyor</button><br>
-                            <br>
-                            <div class="teacher-info" id="lazizjon-info">
-                                <button class="btn-modal-x">×</button>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi unde fugiat nostrum maxime corrupti itaque!</p>
-                            </div>
-                            <button class="btn-max" data-teacher="lazizjon">Lazizjon</button><br>
-                            <br>
-                            <div class="teacher-info" id="muhammad-info">
-                                <button class="btn-modal-x">×</button>
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa inventore exercitationem atque vero provident obcaecati!</p>
-                            </div>
-                            <button class="btn-max" data-teacher="muhammad">Muhammad</button><br>
-                            <br>
-                            <div class="teacher-info" id="foziljon-info">
-                                <button class="btn-modal-x">×</button>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos tenetur saepe delectus laudantium, vel ullam!</p>
-                            </div>
-                            <button class="btn-max" data-teacher="foziljon">Foziljon</button><br>
-                        </div>
-                        <div class="div-right">
-                            <h1>IT TAT - O'z qadriyatlariga ega va eng kuchli <br> mutaxassislar <br>jamlangan
-                                zamonaviy kasblar o'quv markazi.</h1>
-                            <button class="btn-max" id="consultBtn">Bepul konsultatsiya olish</button>
+                </header>
+            <!-- </div> -->
+                
+                <div class="max-width">
+                    <!-- Registration Modal -->
+                    <div id="regModal" class="modal">
+                        <div class="modal-content">
+                            <h2>Ro`yxatdan o`tish</h2>
+                            <button class="close-btn" onclick="closeModal('regModal')">×</button>
+                            <form id="regForm">
+                                <input type="text" id="regName" placeholder="Ismingiz" required>
+                                <input type="email" id="regEmail" placeholder="Email manzilingiz" required>
+                                <input type="number" id="regPhone" placeholder="Telefon raqamingiz" required>
+                                <textarea id="regMessage" placeholder="Xabaringiz"></textarea><br>
+                                <button type="submit" class="btn-1">Jo'natish</button>
+                            </form>
+                            <p id="regResult"></p>
                         </div>
                     </div>
-                </div>
+                    
+                    <!-- Consultation Modal -->
+                    <div id="consultModal" class="modal">
+                        <div class="modal-content">
+                            <button class="close-btn" onclick="closeModal('consultModal')">×</button>
+                            <h2>Bepul Konsultatsiya</h2>
+                            <p>Mutaxassimiz bilan bog'lanish uchun ma'lumotlaringizni qoldiring</p>
+                            <form id="consultForm">
+                                <input type="text" id="consultName" placeholder="Ismingiz" required>
+                                <input type="tel" id="consultPhone" placeholder="Telefon raqamingiz" required>
+                                <select id="consultTopic" required>
+                                    <option value="" disabled selected>Mavzuni tanlang</option>
+                                    <option value="frontend">Frontend dasturlash</option>
+                                    <option value="backend">Backend dasturlash</option>
+                                    <option value="mobile">Mobil dasturlash</option>
+                                    <option value="ai">Sun'iy intellekt</option>
+                                </select>
+                                <button type="submit" class="btn-1">So'rov yuborish</button>
+                            </form>
+                            <p id="consultResult"></p>
+                        </div>
+                    </div>
+                    
+                    <div class="div-max-2">
+                        <h1 class="font-size-40 h1-div-max-2">Innovatsiya va texnologiya olami buyuklardan biri bo'lishga<br>IT TAT sizga ko'makdosh</h1>
+                        <div class="div-max-text display">
+                            <div class="div-img">
+                                <img src="assets/2025-07-05_06-21-45 (1).png" alt="Asosiy rasm">
+                            </div>
+                            <div class="teacher-content">
+                                <div class="teacher-info" id="ibrohim-info">
+                                    <p>Ibrohim ustozimiz 5 yillik tajribaga ega dasturchi bo'lib, backend sohasida mutaxassis.</p>
+                                    <button class="btn btn-modal-x" onclick="closeTeacherInfo('ibrohim-info')">×</button>
+                                </div>
+                                <button class="btn-max" data-teacher="ibrohim">Ibrohim</button> <br>
+                                
+                                <div class="teacher-info" id="sayyor-info">
+                                    <p>Sayyor ustozimiz frontend dasturlash bo'yicha mutaxassis bo'lib, React va Vue.js frameworklarini o'rgatadi.</p>
+                                    <button class="btn btn-modal-x" onclick="closeTeacherInfo('sayyor-info')">×</button>
+                                </div>
+                                <button class="btn-max" data-teacher="sayyor">Sayyor</button> <br>
+                                
+                                <div class="teacher-info" id="lazizjon-info">
+                                    <p>Lazizjon ustozimiz mobil dasturlash bo'yicha mutaxassis bo'lib, Flutter va React Native ni o'rgatadi.</p>
+                                    <button class="btn btn-modal-x" onclick="closeTeacherInfo('lazizjon-info')">×</button>
+                                </div>
+                                <button class="btn-max" data-teacher="lazizjon">Lazizjon</button> <br>
+                                
+                                <div class="teacher-info" id="muhammad-info">
+                                    <p>Muhammad ustozimiz ma'lumotlar bazasi va tizimli dasturlash bo'yicha mutaxassis.</p>
+                                    <button class="btn btn-modal-x" onclick="closeTeacherInfo('muhammad-info')">×</button>
+                                </div>
+                                <button class="btn-max" data-teacher="muhammad">Muhammad</button> <br>
+                                
+                                <div class="teacher-info" id="foziljon-info">
+                                    <p>Foziljon ustozimiz sun'iy intellekt va ma'lumotlar tahlili bo'yicha mutaxassis.</p>
+                                    <button class="btn btn-modal-x" onclick="closeTeacherInfo('foziljon-info')">×</button>
+                                </div>
+                                <button class="btn-max" data-teacher="foziljon">Foziljon</button> <br>
+                            </div>
+                            <div class="div-right">
+                                <h1>IT TAT - O'z qadriyatlariga ega va eng kuchli mutaxassislar jamlangan zamonaviy kasblar o'quv markazi.</h1>
+                                <button class="btn-max" id="consultBtn">Bepul konsultatsiya olish</button>
+                            </div>
+                        </div>
+                    </div>
             </div>
         </div>
     </div>
-
-    <script src="script.js"></script>
-</body>
-</html>
+        
+        <script src="script.js"></script>
+    </body>
+    </html>
